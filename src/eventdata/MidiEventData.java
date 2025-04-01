@@ -2,19 +2,22 @@ package eventdata;
 
 public class MidiEventData {
 	
-	private int channel;
-	 private int note;
-	  private int startTick;
-	  private int endTick;
+	//implement a CSV parser to read the file and return List¡MidiEventData¿
+	//the CSV parser should read each line split the values by commas and create MidiEventData objects
+	
+	  private int channel;
+	  private int note;
+	  private int startEndTick;
+	  private int noteOnOff;
 	  private int velocity;
 	  private int instrument;
 	  
 	  //Constructor 
-	  public MidiEventData(int channel, int note, int startTick, int endTick, int velocity, int instrument) {
+	  public MidiEventData(int channel, int note, int startEndTick, int noteOnOff, int velocity, int instrument) {
 		  this.channel = channel;
 		  this.note = note;
-		  this.startTick = startTick;
-		  this.endTick = endTick;
+		  this.startEndTick = startEndTick;
+		  this.noteOnOff = noteOnOff;
 		  this.velocity = velocity;
 		  this.instrument = instrument; 
 	  }
@@ -35,20 +38,20 @@ public class MidiEventData {
 		this.note = note;
 	}
 
-	public int getStartTick() {
-		return startTick;
+	public int getStartEndTick() {
+		return startEndTick;
 	}
 
-	public void setStartTick(int startTick) {
-		this.startTick = startTick;
+	public void setStartEndTick(int startTick) {
+		this.startEndTick = startTick;
 	}
 
-	public int getEndTick() {
-		return endTick;
+	public int getnoteOnOff() {
+		return noteOnOff;
 	}
 
-	public void setEndTick(int endTick) {
-		this.endTick = endTick;
+	public void setnoteOnOff(int endTick) {
+		this.noteOnOff = endTick;
 	}
 
 	public int getVelocity() {
