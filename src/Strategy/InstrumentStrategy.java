@@ -1,6 +1,6 @@
 package Strategy;
 
-public interface instrumentStrategy {
+public interface InstrumentStrategy {
 	
 	void applyInstruments( Track track, int channel);
 	
