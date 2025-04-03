@@ -1,8 +1,10 @@
 package Strategy;
 
+import javax.sound.midi.Track;
+
 public interface InstrumentStrategy {
 	
-	void applyInstruments( Track track, int channel);
+	void applyInstruments(Track track, int channel);
 	
 	//electric bass guitar assigns midi instrument 33
 	
