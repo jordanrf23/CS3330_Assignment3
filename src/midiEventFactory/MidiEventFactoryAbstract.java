@@ -1,7 +1,7 @@
 package midiEventFactory;
 
-public interface MidiEventFactoryAbstract {
+public abstract interface MidiEventFactoryAbstract {
 	
-	MidiEventFactory createFactory();
+	public abstract MidiEventFactory createFactory();
 
 }

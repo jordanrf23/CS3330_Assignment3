@@ -13,6 +13,9 @@ public class MidiEventData {
 	  private int instrument;
 	  
 	  //Constructor 
+	  /*
+	   * method to set each int that is received to corresponding element
+	   */
 	  public MidiEventData(int channel, int note, int startEndTick, int noteOnOff, int velocity, int instrument) {
 		  this.channel = channel;
 		  this.note = note;
@@ -22,7 +25,7 @@ public class MidiEventData {
 		  this.instrument = instrument; 
 	  }
  
-
+	 // getters and setters for each new int 
 	public int getChannel() {
 		return channel;
 	}
@@ -70,7 +73,6 @@ public class MidiEventData {
 	public void setInstrument(int instrument) {
 		this.instrument = instrument;
 	}
-	  
-	  //getters and setters 
+
 
 }
