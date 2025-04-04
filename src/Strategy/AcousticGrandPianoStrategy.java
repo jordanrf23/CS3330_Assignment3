@@ -8,12 +8,12 @@ import javax.sound.midi.Track;
 public class AcousticGrandPianoStrategy implements InstrumentStrategy{
 
 	@Override
-	public void applyInstruments(Track track, int channel) {
-		try {
-			track.add(new MidiEvent(new ShortMessage(ShortMessage.PROGRAM_CHANGE, channel, 0, 0), 0));
-		} catch (InvalidMidiDataException e) {
-			e.printStackTrace();
-		}
+	public void applyInstruments(Track track, int channel) throws InvalidMidiDataException {
+
+		ShortMessage instrumentChange = new ShortMessage();
+		instrumentChange.setMessage(ShortMessage.PROGRAM_CHANGE, channel, 0, 0);
+		track.add(new MidiEvent(instrumentChange, 0));
 	}
+
 
 }

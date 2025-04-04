@@ -21,6 +21,7 @@ public class MidiEventData {
 		  this.velocity = velocity;
 		  this.instrument = instrument; 
 	  }
+ 
 
 	public int getChannel() {
 		return channel;
