@@ -22,7 +22,7 @@ public class Main {
 			Sequence sequence = new Sequence (Sequence.PPQ, 384);
 			Track track = sequence.createTrack();
 			
-			MidiEventFactoryAbstract factoryAbstract = new StandardFactory();
+			MidiEventFactoryAbstract factoryAbstract = new LegatoFactory();
 			
 			MidiEventFactory factory = factoryAbstract.createFactory();
 			
