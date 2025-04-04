@@ -6,7 +6,11 @@ import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
 public class TrumpetStrategy implements InstrumentStrategy{
-
+	
+	
+	/*
+	 * changes the instrument to trumpet by going to 56, 0
+	 */
 	@Override
 	public void applyInstruments(Track track, int channel) throws InvalidMidiDataException {
 		ShortMessage instrumentChange = new ShortMessage();

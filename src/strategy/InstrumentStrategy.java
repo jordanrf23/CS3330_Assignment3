@@ -5,6 +5,9 @@ import javax.sound.midi.Track;
 
 public interface InstrumentStrategy {
 	
+	/*
+	 * base method to be used by different instruments so they can sound proper
+	 */
 	void applyInstruments(Track track, int channel) throws InvalidMidiDataException;
 	
 	//electric bass guitar assigns midi instrument 33

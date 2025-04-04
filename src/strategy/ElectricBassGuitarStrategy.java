@@ -7,6 +7,10 @@ import javax.sound.midi.Track;
 
 public class ElectricBassGuitarStrategy implements InstrumentStrategy{
 
+	
+	/*
+	 * when used electric will change the instrument to 33, 0
+	 */
 	@Override
 	public void applyInstruments(Track track, int channel) throws InvalidMidiDataException {
 		ShortMessage instrumentChange = new ShortMessage();
