@@ -1,27 +1,29 @@
 package parser;
 
 import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.sound.midi.InvalidMidiDataException;
-import javax.sound.midi.MidiEvent;
-
-import midiEventFactory.MidiEventFactory;
 import eventdata.MidiEventData;
 
 public class CsvParser {
 	
-	public List<MidiEventData> parseCsv(String filePath) throws IOException, InvalidMidiDataException {
-		List<MidiEvent> midiEvents = new ArrayList<>();
+	public static List<MidiEventData> parseCsv(String filePath) throws IOException, InvalidMidiDataException {
+		List<MidiEventData> midiEvents = new ArrayList<>();
 		
 		try (BufferedReader reader = new BufferedReader(new FileReader(filePath))){
 			String line;
+			boolean isFirstLine = true;
 			while((line = reader.readLine()) != null) {
+				if(isFirstLine) {
+					isFirstLine = false;
+					continue;
+				}
 				String[] values = line.split(" , ");
-				if(values.length < 4) {
+				if(values.length != 6) {
 					throw new InvalidMidiDataException("Invalid number of fields in CSV row.");
 				}
 		
@@ -29,11 +31,12 @@ public class CsvParser {
 				int note = Integer.parseInt(values[1].trim());
 				int velocity = Integer.parseInt(values[2].trim());
 				int channel = Integer.parseInt(values[3].trim());
-				String noteOnOff = values[4].trim();
-				
+				int noteOnOff = Integer.parseInt(values[4].trim());
+				int instrument = Integer.parseInt(values[5].trim());
 			
 	
-				midiEvents.add(new MidiEventData(channel, note, tick, note, velocity, channel));
+				MidiEventData data = new MidiEventData(channel, note, tick, noteOnOff, velocity, instrument);
+				midiEvents.add(data);
 			}
 				
 		}catch (IOException e) {
@@ -41,7 +44,7 @@ public class CsvParser {
 			throw e;
 		}
 			
-		return midiEvents;
+		return (List<MidiEventData>) midiEvents;
 	}
 
 }
