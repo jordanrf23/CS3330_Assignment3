@@ -14,7 +14,7 @@ import eventdata.MidiEventData;
 
 public class CsvParser {
 	
-	public List<MidiEvent> parseCsv(String filePath) throws IOException, InvalidMidiDataException {
+	public List<MidiEventData> parseCsv(String filePath) throws IOException, InvalidMidiDataException {
 		List<MidiEvent> midiEvents = new ArrayList<>();
 		
 		try (BufferedReader reader = new BufferedReader(new FileReader(filePath))){

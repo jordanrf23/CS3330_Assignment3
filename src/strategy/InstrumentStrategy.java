@@ -1,4 +1,4 @@
-package Strategy;
+package strategy;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.Track;
