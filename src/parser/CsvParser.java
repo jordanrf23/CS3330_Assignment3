@@ -49,7 +49,8 @@ public class CsvParser {
 			e.printStackTrace();
 			throw e;
 		}
-			
+		
+		System.out.println("Parser completed");
 		return (List<MidiEventData>) midiEvents;
 	}
 
